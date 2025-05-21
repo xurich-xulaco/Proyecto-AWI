@@ -1,0 +1,70 @@
+// Adwaita-inspired color scheme
+$primary: #ED333B;      // Light mode primary
+$secondary: #26A269;    // Light mode secondary
+$accent: #F6D32D;       // Accent color (both modes)
+$light: #FFFFFF;        // Light mode background
+$dark: #241F31;         // Dark mode background
+$light-text: #F6F5F4;   // Dark mode text
+$dark-text: #000000;    // Light mode text
+
+// Import Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+// Custom Adwaita-style modifications
+body {
+    font-family: 'Cantarell', sans-serif;
+}
+
+// Light mode (default)
+body {
+    background-color: $light;
+    color: $dark-text;
+}
+
+// Dark mode
+body.dark-mode {
+    background-color: $dark;
+    color: $light-text;
+    
+    .card {
+        background-color: lighten($dark, 5%);
+        border-color: lighten($dark, 10%);
+    }
+    
+    .navbar {
+        background-color: darken($dark, 3%) !important;
+    }
+    
+    .btn-primary {
+        background-color: #C01C28; // Dark mode primary
+        border-color: #C01C28;
+    }
+    
+    .btn-secondary {
+        background-color: #2EC27E; // Dark mode secondary
+        border-color: #2EC27E;
+    }
+}
+
+// Adwaita-style buttons
+.btn {
+    border-radius: 4px;
+    font-weight: 500;
+}
+
+// Adwaita-style cards
+.card {
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+// Adwaita-style navbar
+.navbar {
+    padding: 0.5rem 1rem;
+}
+
+// Adwaita-style form elements
+.form-control {
+    border-radius: 4px;
+    padding: 0.5rem 0.75rem;
+}
