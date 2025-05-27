@@ -1,12 +1,15 @@
+// Variables
+@use "variables" as *;
+
+// Bootstrap
+@use "bootstrap/scss/bootstrap";
+
 /* Adwaita Sans */
 @import url('https://fonts.bunny.net/css?family=Adwaita+Sans');
 
 body {
   font-family: 'Adwaita Sans', sans-serif;
 }
-
-// Variables
-@import 'variables';
 
 :root {
   --adw-primary-color:   #ED333B;
@@ -22,13 +25,3 @@ body {
   --adw-text-color:      #F6F5F4;
   --adw-accent-color:    #F6D32D;
 }
-
-@import "app";
-
-// Bootstrap
-@import "~bootstrap/scss/bootstrap";
-
-// Estilo Adwaita
-@import "adwavecss/dist/adwave.css";
-
-@import "overrides";

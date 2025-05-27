@@ -3,9 +3,6 @@
 // 1) Carga la inicialización por defecto de Breeze/Bootstrap
 import 'bootstrap';
 
-// 2) Web Components de ADWaveUI
-import 'adwaveui';
-
 // 3) Three.js y GLTFLoader para el loader 3D
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
