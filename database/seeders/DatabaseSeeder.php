@@ -19,7 +19,7 @@ class DatabaseSeeder extends Seeder
          // Creación de roles
         $this->call(\Database\Seeders\RolesSeeder::class);
         // Usuario de prueba
-        User::updateOrCreate(
+        $user = User::updateOrCreate(
             ['email' => 'proyectoweb047@gmail.com'],
             [
                 'name'              => 'Admin',

@@ -4,7 +4,7 @@
 import 'bootstrap';
 
 // 2) Web Components de ADWaveUI
-import 'adwaveui/dist/adwave-ui.js';
+import 'adwaveui';
 
 // 3) Three.js y GLTFLoader para el loader 3D
 import * as THREE from 'three';
