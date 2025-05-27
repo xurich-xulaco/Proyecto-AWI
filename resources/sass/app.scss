@@ -1,8 +1,32 @@
-// Fonts
-@import url('https://fonts.bunny.net/css?family=Nunito');
+/* Adwaita Sans */
+@import url('https://fonts.bunny.net/css?family=Adwaita+Sans');
+
+body {
+  font-family: 'Adwaita Sans', sans-serif;
+}
 
 // Variables
 @import 'variables';
 
+:root {
+  --adw-primary-color:   #ED333B;
+  --adw-secondary-color: #26A269;
+  --adw-bg-color:        #FFFFFF;
+  --adw-text-color:      #000000;
+  --adw-accent-color:    #F6D32D;
+}
+[data-theme="dark"] {
+  --adw-primary-color:   #C01C28;
+  --adw-secondary-color: #2EC27E;
+  --adw-bg-color:        #241F31;
+  --adw-text-color:      #F6F5F4;
+  --adw-accent-color:    #F6D32D;
+}
+
+@import "app";
+
 // Bootstrap
 @import 'bootstrap/scss/bootstrap';
+
+// Estilo Adwaita
+@import "../vendor/ADWaveCSS/dist/styles.min.css";

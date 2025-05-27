@@ -16,7 +16,7 @@ return new class extends Migration
             $t->foreignId('id_rol')
             ->constrained('rols','id_rol')
             ->onDelete('cascade');
-            $t->string('nom_usuario', 100);
+            $t->string('name', 100);
             $t->string('email', 150)->unique();
             $t->timestamp('email_verified_at')->nullable();
             $t->string('password');

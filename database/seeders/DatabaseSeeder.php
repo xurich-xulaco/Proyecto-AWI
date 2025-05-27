@@ -13,11 +13,23 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
+        // Limpieza opcional (si quieres forzar fresh):
+        // \App\Models\User::truncate();
 
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-        ]);
+         // Creación de roles
+        $this->call(\Database\Seeders\RolesSeeder::class);
+        // Usuario de prueba
+        User::updateOrCreate(
+            ['email' => 'proyectoweb047@gmail.com'],
+            [
+                'name'              => 'Admin',
+                'password'          => bcrypt('secret'),
+                // Aquí USAMOS el enum 'rol', no 'role_id' ni 'id_rol'
+                'rol'               => 'gerente',
+                'email_verified_at' => now(),
+            ]
+        );
+
+        $this->command->info("Usuario admin creado/actualizado con ID {$user->id}");
     }
 }
