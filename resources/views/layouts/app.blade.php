@@ -15,7 +15,10 @@
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
 
     <!-- Scripts -->
-    @vite(['resources/css/app.css','resources/js/app.js'])
+    @vite(['resources/sass/app.scss','resources/js/app.js'])
+    <!-- CDN de ADWaveCSS -->
+    <link rel="stylesheet"
+            href="https://cdn.jsdelivr.net/gh/ncpa0/ADWaveCSS@master/dist/adwave.css">
     @stack('styles')
 </head>
 <body class="min-vh-100 d-flex flex-column">
@@ -24,5 +27,9 @@
         @yield('content')
     </main>
     @include('partials.footer')
+    <!-- tu <script> de JS generado por Vite -->
+    @vite(['resources/js/app.js'])
+    <!-- CDN de ADWaveUI -->
+    <script src="https://cdn.jsdelivr.net/gh/ncpa0/ADWaveUI@master/dist/adwave-ui.js"></script>
 </body>
 </html>

@@ -1,10 +1,10 @@
 // resources/js/app.js
 
 // 1) Carga la inicialización por defecto de Breeze/Bootstrap
-import './bootstrap';
+import 'bootstrap';
 
 // 2) Web Components de ADWaveUI
-import '@adwaveui/adwaveui.min.js';
+import 'adwaveui/dist/adwave-ui.js';
 
 // 3) Three.js y GLTFLoader para el loader 3D
 import * as THREE from 'three';

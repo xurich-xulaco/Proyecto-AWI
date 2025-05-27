@@ -1,5 +1,7 @@
 // Importar los estilos Adwaita
-import '../../vendor/ADWaveUI/dist/adwaveui.min.js';
+import 'adwaveui/dist/adwave-ui.js';
+
+import './init-alpine';
 
 // Importar los renders para 3D
 import * as THREE from 'three';
