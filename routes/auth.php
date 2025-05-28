@@ -7,6 +7,17 @@ use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\VerifyEmailController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\View\View;
+
+// Mostrar el formulario de login
+Route::get('/login', function (): View {
+    return view('auth.login');
+})->middleware('guest')->name('login');
+
+// Mostrar el formulario de registro
+Route::get('/register', function (): View {
+    return view('auth.register');
+})->middleware('guest')->name('register');
 
 Route::post('/register', [RegisteredUserController::class, 'store'])
     ->middleware('guest')
