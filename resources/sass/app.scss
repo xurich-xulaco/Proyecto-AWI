@@ -4,24 +4,35 @@
 // Bootstrap
 @use "bootstrap/scss/bootstrap";
 
+// Adwaita
+@import "adwavecss/dist/styles.css";
+
 /* Adwaita Sans */
-@import url('https://fonts.bunny.net/css?family=Adwaita+Sans');
+@font-face {
+  font-family: 'Adwaita Sans';
+  src: url('/fonts/AdwaitaSans-Regular.ttf') format('truetype');
+  font-weight: 400; font-style: normal;
+}
 
 body {
   font-family: 'Adwaita Sans', sans-serif;
 }
 
+/* 3) Variables de tema */
 :root {
-  --adw-primary-color:   #ED333B;
-  --adw-secondary-color: #26A269;
-  --adw-bg-color:        #FFFFFF;
-  --adw-text-color:      #000000;
-  --adw-accent-color:    #F6D32D;
+  --adw-primary:    #ED333B;
+  --adw-secondary:  #26A269;
+  --adw-background: #FFFFFF;
+  --adw-text:       #000000;
+  --adw-accent:     #F6D32D;
+  --adw-padding:    16px;
+  --adw-radius:     8px;
 }
 [data-theme="dark"] {
-  --adw-primary-color:   #C01C28;
-  --adw-secondary-color: #2EC27E;
-  --adw-bg-color:        #241F31;
-  --adw-text-color:      #F6F5F4;
-  --adw-accent-color:    #F6D32D;
+  --adw-primary:    #C01C28;
+  --adw-secondary:  #2EC27E;
+  --adw-background: #241F31;
+  --adw-text:       #F6F5F4;
+  --adw-accent:     #F6D32D;
 }
+

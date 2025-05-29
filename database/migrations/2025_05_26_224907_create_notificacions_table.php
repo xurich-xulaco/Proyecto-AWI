@@ -6,11 +6,16 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
+    protected $table = 'notificaciones';
     /**
      * Run the migrations.
      */
     public function up(): void
     {
+        Schema::disableForeignKeyConstraints();
+        Schema::dropIfExists($this->table);
+        Schema::enableForeignKeyConstraints();
+
         Schema::create('notificaciones', function (Blueprint $t) {
             $t->id('id_notificacion');
             $t->foreignId('id_usuario')->constrained('users','id_usuario')->onDelete('cascade');
@@ -26,6 +31,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('notificacions');
+        Schema::disableForeignKeyConstraints();
+        Schema::dropIfExists('notificaciones');
+        Schema::enableForeignKeyConstraints();
     }
 };

@@ -1,30 +1,27 @@
 @extends('layouts.app')
-@section('title','Nuevo pedido')
+
 @section('content')
-<h2>Arma tu pizza</h2>
-<form action="{{ route('customer.orders.store') }}" method="POST">
+<h2 class="adw-title">Nuevo Pedido</h2>
+
+<form action="{{ route('customer.orders.store') }}" method="POST" class="adw-grid" style="gap:1rem;">
   @csrf
-  <div class="row">
-    @foreach($pizzas as $pizza)
-    <div class="col-md-4">
-      <div class="card mb-3">
-        <img src="{{ asset($pizza->image) }}" class="card-img-top" alt="{{ $pizza->name }}">
-        <div class="card-body">
-          <h5 class="card-title">{{ $pizza->name }}</h5>
-          <p>{{ $pizza->description }}</p>
-          <p><strong>${{ $pizza->price }}</strong></p>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox"
-                   name="pizzas[]" value="{{ $pizza->id }}" id="pizza{{ $pizza->id }}">
-            <label class="form-check-label" for="pizza{{ $pizza->id }}">
-              Añadir
-            </label>
-          </div>
-        </div>
-      </div>
-    </div>
+
+  <adw-select name="size" label="Tamaño">
+    <adw-option value="small">Pequeña</adw-option>
+    <adw-option value="medium">Mediana</adw-option>
+    <adw-option value="large">Grande</adw-option>
+  </adw-select>
+
+  <fieldset class="adw-fieldset">
+    <legend>Ingredientes</legend>
+    @foreach($ingredients as $ingredient)
+      <label class="adw-checkbox-wrapper">
+        <adw-checkbox name="ingredients[]" value="{{ $ingredient->id }}"></adw-checkbox>
+        {{ $ingredient->name }}
+      </label>
     @endforeach
-  </div>
-  <button class="btn btn-primary">Realizar pedido</button>
+  </fieldset>
+
+  <adw-button variant="primary" type="submit">Enviar Pedido</adw-button>
 </form>
 @endsection

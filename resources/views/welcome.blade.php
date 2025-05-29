@@ -1,24 +1,19 @@
-{{-- resources/views/welcome.blade.php --}}
 @extends('layouts.app')
 
 @section('content')
-  <div class="text-center my-5">
-    <h1 class="adw-primary-text">¡Bienvenido a Pizza Hat!</h1>
-    <p class="lead">La mejor pizza con UI Adwaita y animación 3D.</p>
-  </div>
+<div class="adw-container adw-grid adw-col-1 adw-col-md-2" style="gap: 2rem;">
+  <div>
+    {{-- Greeting 3D --}}
+    <x-pizza-logo size="120" />
 
-  {{-- Loader 3D --}}
-  <div class="d-flex justify-content-center">
-    <canvas id="pizza-loader" width="300" height="300"></canvas>
+    <h1 class="adw-title">¡Bienvenido a PizzaHat!</h1>
+    <p class="adw-text">Gestiona tus pedidos con el estilo de Adwaita.</p>
+    <a href="{{ route('login') }}">
+      <adw-button variant="primary">Empieza Ahora</adw-button>
+    </a>
   </div>
-
-  {{-- Inicialización del loader --}}
-  @push('scripts')
-    <script type="module">
-      // Espera a que Vite haya cargado app.js
-      document.addEventListener('DOMContentLoaded', () => {
-        initPizzaLoader('pizza-loader', '/models/pizza.glb');
-      });
-    </script>
-  @endpush
+  <div>
+    @include('components.pizza-loader')
+  </div>
+</div>
 @endsection

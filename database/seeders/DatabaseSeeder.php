@@ -18,6 +18,8 @@ class DatabaseSeeder extends Seeder
 
          // Creación de roles
         $this->call(\Database\Seeders\RolesSeeder::class);
+        // Crear ingredientes
+        $this->call([IngredientSeeder::class,]);
         // Usuario de prueba
         $user = User::updateOrCreate(
             ['email' => 'proyectoweb047@gmail.com'],

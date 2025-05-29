@@ -11,4 +11,18 @@ export default defineConfig({
             refresh: true,
         }),
     ],
+    resolve: {
+        alias: {
+            '@adwavecss': 'node_modules/@ncpa0/adwavecss/css/adwave.min.css',
+            '@adwaveui':  'node_modules/@ncpa0/adwaveui/dist/adwaveui.js',
+        },
+    },
+    build: {
+        rollupOptions: {
+            input: {
+            app: 'resources/js/app.js',
+            pizzaLogo: 'resources/js/pizzaLogo.js',
+            },
+        },
+    },
 });
