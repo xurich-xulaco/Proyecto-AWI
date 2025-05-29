@@ -10,7 +10,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- Scripts -->
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     <link rel="preload" href="{{ asset('fonts/AdwaitaSans-Regular.ttf') }}" as="font" type="font/ttf" crossorigin>
     <link rel="icon" href="{{ asset('favicon.png') }}" type="image/png">
     @stack('styles')
