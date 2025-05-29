@@ -4,7 +4,9 @@
 import 'bootstrap';
 
 // 2) Cargar Adwaita
-import 'adwaveui';
+import 'adwavecss/dist/styles.min.css';
+// 3) Cargar Three.js para el modelo 3D de pizza
+import './pizzaLogo.js';
 
 const btn = document.getElementById('theme-toggle');
 btn?.addEventListener('click', () => {

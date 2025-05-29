@@ -13,9 +13,10 @@ export default defineConfig({
     ],
     resolve: {
         alias: {
-            '@adwavecss': 'node_modules/@ncpa0/adwavecss/css/adwave.min.css',
-            '@adwaveui':  'node_modules/@ncpa0/adwaveui/dist/adwaveui.js',
+            '@adwavecss': 'node_modules/adwavecss/dist/styles.min.css',
+            '@adwaveui':  'node_modules/adwaveui/dist/bundle/index.js',
         },
+        extensions: ['.js', '.mjs'],
     },
     build: {
         rollupOptions: {
